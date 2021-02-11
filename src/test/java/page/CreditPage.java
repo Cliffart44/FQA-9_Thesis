@@ -17,20 +17,22 @@ public class CreditPage {
     private static SelenideElement yearField = $x("//div[2]/span/span[2]/span/span/span[2]/input");
     private static SelenideElement yearFieldErrorMessage = $x("//div[2]/span/span[2]/span/span/span[3]");
     private static SelenideElement ownerField = $x("//div[3]/span/span[1]/span/span/span[2]/input");
-    private static SelenideElement ownerFieldErrorMessage = $$(".form-field .input__sub").findBy(text("Поле"));
+    private static SelenideElement ownerFieldErrorMessage = $$(".form-field .input__sub").find(text("Поле"));
     private static SelenideElement cvcCvvField = $("input[placeholder='999']");
     private static SelenideElement cvcCvvFieldErrorMessage = $x("//div[3]/span/span[2]/span/span/span[3]");
     private static SelenideElement proceedButton = $(".form-field .button");
     private static SelenideElement succeedNotification = $(".icon_name_ok");
-    private static SelenideElement succeedNotificationTitle = $$(".notification__title").findBy(text("Успешно"));
+    private static SelenideElement succeedNotificationTitle = $$(".notification__title").find(text("Успешно"));
     private static SelenideElement succeedMessage = $$(".notification__content").findBy(text("одобрена"));
     private static SelenideElement errorNotification = $(".icon_name_error");
-    private static SelenideElement errorNotificationTitle = $$(".notification__title").findBy(text("Ошибка"));
-    private static SelenideElement errorMessage = $$(".notification__content").findBy(text("отказал"));
+    private static SelenideElement errorNotificationTitle = $$(".notification__title").find(text("Ошибка"));
+    private static SelenideElement errorMessage = $$(".notification__content").find(text("отказал"));
 
     public CreditPage() {
         heading.shouldBe(visible);
     }
+
+    private final int delay = 11;
 
     private void request(DataHelper.RequiredFields fields) {
         cardNumberField.setValue(fields.getCardNumber());
@@ -43,16 +45,16 @@ public class CreditPage {
 
     public void approved(DataHelper.RequiredFields fields) {
         request(fields);
-        succeedNotification.shouldBe(visible, Duration.ofSeconds(15));
-        succeedNotificationTitle.shouldBe(visible, Duration.ofSeconds(15)).shouldHave(exactOwnText("Успешно"));
-        succeedMessage.shouldBe(visible, Duration.ofSeconds(15)).shouldHave(exactOwnText("Операция одобрена Банком."));
+        succeedNotification.shouldBe(visible, Duration.ofSeconds(delay));
+        succeedNotificationTitle.shouldBe(visible, Duration.ofSeconds(delay)).shouldHave(exactOwnText("Успешно"));
+        succeedMessage.shouldBe(visible, Duration.ofSeconds(delay)).shouldHave(exactOwnText("Операция одобрена Банком."));
     }
 
     public void declinedWithValidInput(DataHelper.RequiredFields fields) {
         request(fields);
-        errorNotification.shouldBe(visible, Duration.ofSeconds(15));
-        errorNotificationTitle.shouldBe(visible, Duration.ofSeconds(15)).shouldHave(exactOwnText("Ошибка"));
-        errorMessage.shouldBe(visible, Duration.ofSeconds(15)).shouldHave(exactOwnText("Банк отказал в проведении операции."));
+        errorNotification.shouldBe(visible, Duration.ofSeconds(delay));
+        errorNotificationTitle.shouldBe(visible, Duration.ofSeconds(delay)).shouldHave(exactOwnText("Ошибка"));
+        errorMessage.shouldBe(visible, Duration.ofSeconds(delay)).shouldHave(exactOwnText("Банк отказал в проведении операции."));
     }
 
     public void declinedWithEmptyFields() {

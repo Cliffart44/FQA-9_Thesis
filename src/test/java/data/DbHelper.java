@@ -1,7 +1,9 @@
 package data;
 
 import lombok.SneakyThrows;
+import lombok.val;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.sql.Connection;
@@ -11,6 +13,7 @@ import java.util.List;
 public class DbHelper {
     private final static Connection conn = establishConnection();
     private final static QueryRunner runn = new QueryRunner();
+    private final static ResultSetHandler<List<Fields>> hand = new BeanListHandler<>(Fields.class);
 
     private DbHelper() {
     }
@@ -27,25 +30,25 @@ public class DbHelper {
 
     @SneakyThrows
     public static String getCId() {
-        List<Fields> ids = runn.query(conn, "SELECT id FROM credit_request_entity ORDER BY created;", new BeanListHandler<>(Fields.class));
+        val ids = runn.query(conn, "SELECT id FROM credit_request_entity ORDER BY created;", hand);
         return ids.get(ids.size() - 1).getId();
     }
 
     @SneakyThrows
     public static String getCreditBankId() {
-        List<Fields> bankIds = runn.query(conn, "SELECT bank_id FROM credit_request_entity ORDER BY created;", new BeanListHandler<>(Fields.class));
+        val bankIds = runn.query(conn, "SELECT bank_id FROM credit_request_entity ORDER BY created;", hand);
         return bankIds.get(bankIds.size() - 1).getBank_id();
     }
 
     @SneakyThrows
     public static String getCreditCreated() {
-        List<Fields> created = runn.query(conn, "SELECT created FROM credit_request_entity;", new BeanListHandler<>(Fields.class));
+        val created = runn.query(conn, "SELECT created FROM credit_request_entity;", hand);
         return created.get(created.size() - 1).getCreated();
     }
 
     @SneakyThrows
     public static String getCreditStatus() {
-        List<Fields> statuses = runn.query(conn, "SELECT status FROM credit_request_entity ORDER BY created;", new BeanListHandler<>(Fields.class));
+        val statuses = runn.query(conn, "SELECT status FROM credit_request_entity ORDER BY created;", hand);
         return statuses.get(statuses.size() - 1).getStatus();
     }
 
@@ -53,25 +56,25 @@ public class DbHelper {
 
     @SneakyThrows
     public static String getOrderId() {
-        List<Fields> orderIds = runn.query(conn, "SELECT id FROM order_entity ORDER BY created;", new BeanListHandler<>(Fields.class));
+        val orderIds = runn.query(conn, "SELECT id FROM order_entity ORDER BY created;", hand);
         return orderIds.get(orderIds.size() - 1).getId();
     }
 
     @SneakyThrows
     public static String getOrderCreated() {
-        List<Fields> created = runn.query(conn, "SELECT created FROM order_entity;", new BeanListHandler<>(Fields.class));
+        val created = runn.query(conn, "SELECT created FROM order_entity;", hand);
         return created.get(created.size() - 1).getCreated();
     }
 
     @SneakyThrows
     public static String getCreditId() {
-        List<Fields> creditIds = runn.query(conn, "SELECT credit_id FROM order_entity ORDER BY created;", new BeanListHandler<>(Fields.class));
+        val creditIds = runn.query(conn, "SELECT credit_id FROM order_entity ORDER BY created;", hand);
         return creditIds.get(creditIds.size() - 1).getCredit_id();
     }
 
     @SneakyThrows
     public static String getPaymentId() {
-        List<Fields> paymentIds = runn.query(conn, "SELECT payment_id FROM order_entity ORDER BY created;", new BeanListHandler<>(Fields.class));
+        val paymentIds = runn.query(conn, "SELECT payment_id FROM order_entity ORDER BY created;", hand);
         return paymentIds.get(paymentIds.size() - 1).getPayment_id();
     }
 
@@ -79,31 +82,31 @@ public class DbHelper {
 
     @SneakyThrows
     public static String getPId() {
-        List<Fields> ids = runn.query(conn, "SELECT id FROM payment_entity ORDER BY created;", new BeanListHandler<>(Fields.class));
+        val ids = runn.query(conn, "SELECT id FROM payment_entity ORDER BY created;", hand);
         return ids.get(ids.size() - 1).getId();
     }
 
     @SneakyThrows
     public static int getPaymentAmount() {
-        List<Fields> amounts = runn.query(conn, "SELECT amount FROM payment_entity ORDER BY created;", new BeanListHandler<>(Fields.class));
+        val amounts = runn.query(conn, "SELECT amount FROM payment_entity ORDER BY created;", hand);
         return amounts.get(amounts.size() - 1).getAmount();
     }
 
     @SneakyThrows
     public static String getPaymentCreated() {
-        List<Fields> created = runn.query(conn, "SELECT created FROM payment_entity;", new BeanListHandler<>(Fields.class));
+        val created = runn.query(conn, "SELECT created FROM payment_entity;", hand);
         return created.get(created.size() - 1).getCreated();
     }
 
     @SneakyThrows
     public static String getPaymentStatus() {
-        List<Fields> statuses = runn.query(conn, "SELECT status FROM payment_entity ORDER BY created;", new BeanListHandler<>(Fields.class));
+        val statuses = runn.query(conn, "SELECT status FROM payment_entity ORDER BY created;", hand);
         return statuses.get(statuses.size() - 1).getStatus();
     }
 
     @SneakyThrows
     public static String getPaymentTransactionId() {
-        List<Fields> transactionIds = runn.query(conn, "SELECT transaction_id FROM payment_entity ORDER BY created;", new BeanListHandler<>(Fields.class));
+        val transactionIds = runn.query(conn, "SELECT transaction_id FROM payment_entity ORDER BY created;", hand);
         return transactionIds.get(transactionIds.size() - 1).getTransaction_id();
     }
 }

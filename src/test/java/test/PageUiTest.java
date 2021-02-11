@@ -3,7 +3,6 @@ package test;
 import data.DataHelper;
 import data.DbHelper;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import page.DashboardPage;
 
@@ -23,7 +22,7 @@ public class PageUiTest {
     /*_________________________________*/
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldApproveViaCredit() {
         new DashboardPage().goToCreditPage().approved(DataHelper.getValidApprovedFields());
         assertNull(DbHelper.getPaymentId());
@@ -36,7 +35,7 @@ public class PageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertCreditIdAndTransactionId() {
         new DashboardPage().goToCreditPage().approved(DataHelper.getValidApprovedFields());
         assertEquals(DbHelper.getCreditId(), DbHelper.getCreditBankId());
@@ -72,21 +71,21 @@ public class PageUiTest {
     /*_________________________________*/
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldDeclineViaCredit() {
         new DashboardPage().goToCreditPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertNull(DbHelper.getPaymentId());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedCId() {
         new DashboardPage().goToCreditPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertNotNull(DbHelper.getCId());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedCreditIdAndTransactionId() {
         new DashboardPage().goToCreditPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertEquals(DbHelper.getCreditId(), DbHelper.getCreditBankId());
@@ -94,28 +93,28 @@ public class PageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedCreditCreated() {
         new DashboardPage().goToCreditPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertNotNull(DbHelper.getCreditCreated());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedCreditStatus() {
         new DashboardPage().goToCreditPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertEquals("DECLINED", DbHelper.getCreditStatus());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedCreditOrderId() {
         new DashboardPage().goToCreditPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertNotNull(DbHelper.getOrderId());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedCreditOrderCreated() {
         new DashboardPage().goToCreditPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertNotNull(DbHelper.getOrderCreated());
@@ -131,13 +130,13 @@ public class PageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldDeclineViaCreditWithInvalidCard() {
         new DashboardPage().goToCreditPage().declinedWithInvalidCard(DataHelper.getInvalidCardFields());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldDeclineViaCreditWithInvalidOwner() {
         new DashboardPage().goToCreditPage().declinedWithInvalidOwner(DataHelper.getInvalidOwnerFields());
     }
@@ -200,42 +199,42 @@ public class PageUiTest {
     /*_____________________________________*/
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldDeclineViaPayment() {
         new DashboardPage().goToPaymentPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertNull(DbHelper.getCreditId());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedPId() {
         new DashboardPage().goToPaymentPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertNotNull(DbHelper.getPId());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedPaymentAmount() {
         new DashboardPage().goToPaymentPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertEquals(amount, DbHelper.getPaymentAmount());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedPaymentCreated() {
         new DashboardPage().goToPaymentPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertNotNull(DbHelper.getPaymentCreated());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedPaymentStatus() {
         new DashboardPage().goToPaymentPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertEquals("DECLINED", DbHelper.getPaymentStatus());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedPaymentIdAndTransactionId() {
         new DashboardPage().goToPaymentPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertEquals(DbHelper.getPaymentId(), DbHelper.getPaymentTransactionId());
@@ -243,14 +242,14 @@ public class PageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedOrderId() {
         new DashboardPage().goToPaymentPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertNotNull(DbHelper.getOrderId());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedPaymentOrderCreated() {
         new DashboardPage().goToPaymentPage().declinedWithValidInput(DataHelper.getValidDeclinedFields());
         assertNotNull(DbHelper.getOrderCreated());
@@ -266,13 +265,13 @@ public class PageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldDeclineViaPaymentWithInvalidCard() {
         new DashboardPage().goToPaymentPage().declinedWithInvalidCard(DataHelper.getInvalidCardFields());
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldDeclineViaPaymentWithInvalidOwner() {
         new DashboardPage().goToPaymentPage().declinedWithInvalidOwner(DataHelper.getInvalidOwnerFields());
     }

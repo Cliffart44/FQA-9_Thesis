@@ -32,6 +32,8 @@ public class PaymentPage {
         heading.shouldBe(visible);
     }
 
+    private final int delay = 11;
+
     private void purchase(DataHelper.RequiredFields fields) {
         cardNumberField.setValue(fields.getCardNumber());
         monthField.setValue(fields.getMonth());
@@ -43,16 +45,16 @@ public class PaymentPage {
 
     public void approved(DataHelper.RequiredFields fields) {
         purchase(fields);
-        succeedNotification.shouldBe(visible, Duration.ofSeconds(15));
-        succeedNotificationTitle.shouldBe(visible, Duration.ofSeconds(15)).shouldHave(exactOwnText("Успешно"));
-        succeedMessage.shouldBe(visible, Duration.ofSeconds(15)).shouldHave(exactOwnText("Операция одобрена Банком."));
+        succeedNotification.shouldBe(visible, Duration.ofSeconds(delay));
+        succeedNotificationTitle.shouldBe(visible, Duration.ofSeconds(delay)).shouldHave(exactOwnText("Успешно"));
+        succeedMessage.shouldBe(visible, Duration.ofSeconds(delay)).shouldHave(exactOwnText("Операция одобрена Банком."));
     }
 
     public void declinedWithValidInput(DataHelper.RequiredFields fields) {
         purchase(fields);
-        errorNotification.shouldBe(visible, Duration.ofSeconds(15));
-        errorNotificationTitle.shouldBe(visible, Duration.ofSeconds(15)).shouldHave(exactOwnText("Ошибка"));
-        errorMessage.shouldBe(visible, Duration.ofSeconds(15)).shouldHave(exactOwnText("Банк отказал в проведении операции."));
+        errorNotification.shouldBe(visible, Duration.ofSeconds(delay));
+        errorNotificationTitle.shouldBe(visible, Duration.ofSeconds(delay)).shouldHave(exactOwnText("Ошибка"));
+        errorMessage.shouldBe(visible, Duration.ofSeconds(delay)).shouldHave(exactOwnText("Банк отказал в проведении операции."));
     }
 
     public void declinedWithEmptyFields() {

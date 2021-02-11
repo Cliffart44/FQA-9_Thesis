@@ -6,7 +6,7 @@
 
 ### Необходимое окружение
 - [x] [**Docker Desktop 3.1.0 (51484)**](https://www.docker.com/products/docker-desktop)
-- [x] [**Java Development Kit 11.0.10+9**](https://adoptopenjdk.net/index.html)
+- [x] [**AdoptOpenJDK 11.0.10+9**](https://adoptopenjdk.net/index.html)
 
 ### Запуск
 1. Получить код [репозитория](https://github.com/Cliffart44/FQA-9_Thesis.git) удобным способом.
@@ -22,7 +22,7 @@
 По умолчанию `SUT` работает с [_PostgreSQL_](https://www.postgresql.org/about/), однако, можно задействовать [_MySQL_](https://www.mysql.com/about/) при необходимости.
 <br> Для этого до запуска автотестов нужно:
 * включить `SUT` [командой](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config-files) <br> `java -jar aqa-shop.jar --spring.datasource.url=jdbc:mysql://localhost:3306/app`;
-* переключить [_DbHelper_](/src/test/java/data/DbHelper.java) (метод [`establishConnection`](https://github.com/Cliffart44/FQA-9_Thesis/blob/8c79894efdccdbf5c23cd67dd680c66954a5b73e/src/test/java/data/DbHelper.java#L18-L24)) на [`Second`](https://github.com/Cliffart44/FQA-9_Thesis/blob/8c79894efdccdbf5c23cd67dd680c66954a5b73e/src/test/java/data/DbHelper.java#L22) режим.
+* переключить [_DbHelper_](/src/test/java/data/DbHelper.java) (метод [`establishConnection`](/src/test/java/data/DbHelper.java#L21-L27)) на [`Second`](/src/test/java/data/DbHelper.java#L25) режим.
 
 > Для этой конфигурации также доступно `Gradle` [_Test MySQL-Summary_][Netlify].
 
@@ -32,7 +32,7 @@
 [<img align="left" src="https://badges.gitter.im/Cliffart44/community.svg"/>][Gitter]
 
 [Task]: https://github.com/netology-code/qa-diploma/tree/2ccafd34b6f9eb3a66dd7a11a0b8b1ba3f266e50#%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%BF%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D0%B8-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D1%89%D0%B8%D0%BA
-[GradleBuildScan]: https://gradle.com/s/7sfn7ot4j6oy4
+[GradleBuildScan]: https://gradle.com/s/wjserrg5afumm
 [Vercel]: https://fqa-9-thesis-gradle-report.vercel.app/
 [Netlify]: https://fqa-9-thesis-gradle-mysql-report.netlify.app/
 [AppVeyor]: https://ci.appveyor.com/project/Cliffart44/fqa-9-thesis
