@@ -32,7 +32,7 @@
 [<img align="left" src="https://badges.gitter.im/Cliffart44/community.svg"/>][Gitter]
 
 [Task]: https://github.com/netology-code/qa-diploma/tree/2ccafd34b6f9eb3a66dd7a11a0b8b1ba3f266e50#%D0%B4%D0%B8%D0%BF%D0%BB%D0%BE%D0%BC%D0%BD%D1%8B%D0%B9-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%BF%D1%80%D0%BE%D1%84%D0%B5%D1%81%D1%81%D0%B8%D0%B8-%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D1%89%D0%B8%D0%BA
-[GradleBuildScan]: https://gradle.com/s/wjserrg5afumm
+[GradleBuildScan]: https://gradle.com/s/g52x4prha2zfg
 [Vercel]: https://fqa-9-thesis-gradle-report.vercel.app/
 [Netlify]: https://fqa-9-thesis-gradle-mysql-report.netlify.app/
 [AppVeyor]: https://ci.appveyor.com/project/Cliffart44/fqa-9-thesis

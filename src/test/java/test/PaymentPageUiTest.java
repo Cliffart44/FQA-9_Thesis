@@ -100,7 +100,7 @@ public class PaymentPageUiTest {
     /*_____________________________________*/
 
     @Test
-    @Disabled
+    // @Disabled
     void shouldDeclineViaPayment() {
         new
                 DashboardPage().
@@ -110,8 +110,8 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
-    void shouldInsertDeclinedPId() {
+    // @Disabled
+    void shouldInsertDeclinedPaymentId() {
         new
                 DashboardPage().
                 goToPaymentPage().
@@ -120,7 +120,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+    // @Disabled
     void shouldInsertDeclinedPaymentAmount() {
         new
                 DashboardPage().
@@ -130,7 +130,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+    // @Disabled
     void shouldInsertDeclinedPaymentCreated() {
         new
                 DashboardPage().
@@ -140,7 +140,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+    // @Disabled
     void shouldInsertDeclinedPaymentStatus() {
         new
                 DashboardPage().
@@ -150,7 +150,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+    // @Disabled
     void shouldInsertDeclinedPaymentIdAndTransactionId() {
         new
                 DashboardPage().
@@ -161,7 +161,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+    // @Disabled
     void shouldInsertDeclinedOrderId() {
         new
                 DashboardPage().
@@ -171,7 +171,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+    // @Disabled
     void shouldInsertDeclinedPaymentOrderCreated() {
         new
                 DashboardPage().
@@ -193,7 +193,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+    // @Disabled
     void shouldDeclineViaPaymentWithInvalidCard() {
         new
                 DashboardPage().
@@ -202,7 +202,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+    // @Disabled
     void shouldDeclineViaPaymentWithInvalidOwner() {
         new
                 DashboardPage().
