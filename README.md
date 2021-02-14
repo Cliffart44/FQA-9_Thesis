@@ -20,9 +20,9 @@
 ---
 ### Переключение баз данных
 По умолчанию `SUT` работает с [_PostgreSQL_](https://www.postgresql.org/about/), однако, можно задействовать [_MySQL_](https://www.mysql.com/about/) при необходимости.
-<br> Для этого до запуска автотестов нужно:
+<br> Для этого нужно:
 * включить `SUT` [командой](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config-files) <br> `java -jar aqa-shop.jar --spring.datasource.url=jdbc:mysql://localhost:3306/app`;
-* переключить [_DbHelper_](/src/test/java/data/DbHelper.java) (метод [`establishConnection`](/src/test/java/data/DbHelper.java#L21-L27)) на [`Second`](/src/test/java/data/DbHelper.java#L25) режим.
+* запустить автотесты [командой](https://issues.gradle.org/browse/GRADLE-2122) <br> `./gradlew clean test -Ddb.url=jdbc:mysql://localhost:3306/app`.
 
 > Для этой конфигурации также доступно `Gradle` [_Test MySQL-Summary_][Netlify].
 

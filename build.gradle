@@ -27,6 +27,5 @@ dependencies {
 
 test {
     useJUnitPlatform()
-    systemProperty 'selenide.headless=true', System.getProperty('selenide.headless')
-//    systemProperty 'selenide.startMaximized=true', System.getProperty('selenide.startMaximized')
+    systemProperties = System.properties
 }

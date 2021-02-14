@@ -20,16 +20,13 @@ public class DbHelper {
 
     @SneakyThrows
     private static Connection establishConnection() {
-        /* First for PostgreSQL */
-        return DriverManager.getConnection("jdbc:postgresql://localhost:5432/app", "app", "pass");
-//        return DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass");
-        /* Second for MySQL */
+        return DriverManager.getConnection(System.getProperty("db.url"), System.getProperty("db.user"), System.getProperty("db.password"));
     }
 
     /* credit_request_entity table */
 
     @SneakyThrows
-    public static String getCId() {
+    public static String getCreditId() {
         val ids = runn.query(conn, "SELECT id FROM credit_request_entity ORDER BY created;", hand);
         return ids.get(ids.size() - 1).getId();
     }
@@ -67,13 +64,13 @@ public class DbHelper {
     }
 
     @SneakyThrows
-    public static String getCreditId() {
+    public static String getOrderCreditId() {
         val creditIds = runn.query(conn, "SELECT credit_id FROM order_entity ORDER BY created;", hand);
         return creditIds.get(creditIds.size() - 1).getCredit_id();
     }
 
     @SneakyThrows
-    public static String getPaymentId() {
+    public static String getOrderPaymentId() {
         val paymentIds = runn.query(conn, "SELECT payment_id FROM order_entity ORDER BY created;", hand);
         return paymentIds.get(paymentIds.size() - 1).getPayment_id();
     }
@@ -81,7 +78,7 @@ public class DbHelper {
     /* payment_entity table*/
 
     @SneakyThrows
-    public static String getPId() {
+    public static String getPaymentId() {
         val ids = runn.query(conn, "SELECT id FROM payment_entity ORDER BY created;", hand);
         return ids.get(ids.size() - 1).getId();
     }

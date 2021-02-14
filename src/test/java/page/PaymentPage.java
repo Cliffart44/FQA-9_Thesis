@@ -43,21 +43,21 @@ public class PaymentPage {
         proceedButton.click();
     }
 
-    public void approved(DataHelper.RequiredFields fields) {
+    public void verifyApproved(DataHelper.RequiredFields fields) {
         purchase(fields);
         succeedNotification.shouldBe(visible, Duration.ofSeconds(delay));
         succeedNotificationTitle.shouldBe(visible, Duration.ofSeconds(delay)).shouldHave(exactOwnText("Успешно"));
         succeedMessage.shouldBe(visible, Duration.ofSeconds(delay)).shouldHave(exactOwnText("Операция одобрена Банком."));
     }
 
-    public void declinedWithValidInput(DataHelper.RequiredFields fields) {
+    public void verifyDeclinedWithValidInput(DataHelper.RequiredFields fields) {
         purchase(fields);
         errorNotification.shouldBe(visible, Duration.ofSeconds(delay));
         errorNotificationTitle.shouldBe(visible, Duration.ofSeconds(delay)).shouldHave(exactOwnText("Ошибка"));
         errorMessage.shouldBe(visible, Duration.ofSeconds(delay)).shouldHave(exactOwnText("Банк отказал в проведении операции."));
     }
 
-    public void declinedWithEmptyFields() {
+    public void checkDeclinedWithEmptyFields() {
         proceedButton.click();
         cardNumberFieldErrorMessage.shouldBe(visible).shouldHave(exactOwnText("Неверный формат"));
         monthFieldErrorMessage.shouldBe(visible).shouldHave(exactOwnText("Неверный формат"));
@@ -66,12 +66,12 @@ public class PaymentPage {
         cvcCvvFieldErrorMessage.shouldBe(visible).shouldHave(exactOwnText("Неверный формат"));
     }
 
-    public void declinedWithInvalidCard(DataHelper.RequiredFields fields) {
+    public void checkDeclinedWithInvalidCard(DataHelper.RequiredFields fields) {
         purchase(fields);
         cardNumberFieldErrorMessage.shouldBe(visible).shouldHave(exactOwnText("Номер карты введён неверно"));
     }
 
-    public void declinedWithInvalidOwner(DataHelper.RequiredFields fields) {
+    public void checkDeclinedWithInvalidOwner(DataHelper.RequiredFields fields) {
         purchase(fields);
         ownerFieldErrorMessage.shouldBe(visible).shouldHave(exactOwnText("Поле обязательно для заполнения"));
     }

@@ -16,7 +16,7 @@ services:
       - POSTGRES_PASSWORD=pass
     ports:
       - 5432:5432
-    container_name: postgres_thesis
+    container_name: postgresql_thesis
 
   mysql_container:
     image: mysql:latest
@@ -27,13 +27,13 @@ services:
       - MYSQL_PASSWORD=pass
     ports:
       - 3306:3306
-    container_name: sql_thesis
+    container_name: mysql_thesis
 
   adminer_container:
     image: adminer:latest
     environment:
-      ADMINER_DEFAULT_SERVER: postgres_thesis # For PostgreSQL database
-#      ADMINER_DEFAULT_SERVER: sql_thesis     # For MySQL database
+      ADMINER_DEFAULT_SERVER: postgresql_thesis # For PostgreSQL database
+#      ADMINER_DEFAULT_SERVER: mysql_thesis     # For MySQL database
       ADMINER_DESIGN: galkaev
     ports:
       - 8081:8080
