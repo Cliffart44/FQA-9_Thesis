@@ -3,12 +3,11 @@ package test;
 import data.DataHelper;
 import data.DbHelper;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import page.DashboardPage;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PaymentPageUiTest {
     private final int expectedAmount = 45_000_00;
@@ -100,7 +99,7 @@ public class PaymentPageUiTest {
     /*_____________________________________*/
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldDeclineViaPayment() {
         new
                 DashboardPage().
@@ -110,7 +109,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedPaymentId() {
         new
                 DashboardPage().
@@ -120,7 +119,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedPaymentAmount() {
         new
                 DashboardPage().
@@ -130,7 +129,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedPaymentCreated() {
         new
                 DashboardPage().
@@ -140,7 +139,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedPaymentStatus() {
         new
                 DashboardPage().
@@ -150,7 +149,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedPaymentIdAndTransactionId() {
         new
                 DashboardPage().
@@ -161,7 +160,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedOrderId() {
         new
                 DashboardPage().
@@ -171,7 +170,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedPaymentOrderCreated() {
         new
                 DashboardPage().
@@ -193,7 +192,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldDeclineViaPaymentWithInvalidCard() {
         new
                 DashboardPage().
@@ -202,7 +201,7 @@ public class PaymentPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldDeclineViaPaymentWithInvalidOwner() {
         new
                 DashboardPage().

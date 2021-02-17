@@ -15,8 +15,9 @@ public class DataHelper {
                 return "4444 4444 4444 4441";
             case ("declined"):
                 return "4444 4444 4444 4442";
+            default:
+                return "4444 4444 4444 4444";
         }
-        return "4444 4444 4444 4444";
     }
 
     private static String getFullName() {

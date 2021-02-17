@@ -3,12 +3,11 @@ package test;
 import data.DataHelper;
 import data.DbHelper;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import page.DashboardPage;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CreditPageUiTest {
 
@@ -22,7 +21,7 @@ public class CreditPageUiTest {
     /*_________________________________*/
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldApproveViaCredit() {
         new
                 DashboardPage().
@@ -41,7 +40,7 @@ public class CreditPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertCreditIdAndTransactionId() {
         new
                 DashboardPage().
@@ -92,7 +91,7 @@ public class CreditPageUiTest {
     /*_________________________________*/
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldDeclineViaCredit() {
         new
                 DashboardPage().
@@ -102,7 +101,7 @@ public class CreditPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedCreditId() {
         new
                 DashboardPage().
@@ -112,7 +111,7 @@ public class CreditPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedCreditIdAndTransactionId() {
         new
                 DashboardPage().
@@ -123,7 +122,7 @@ public class CreditPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedCreditCreated() {
         new
                 DashboardPage().
@@ -133,7 +132,7 @@ public class CreditPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedCreditStatus() {
         new
                 DashboardPage().
@@ -143,7 +142,7 @@ public class CreditPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedCreditOrderId() {
         new
                 DashboardPage().
@@ -153,7 +152,7 @@ public class CreditPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldInsertDeclinedCreditOrderCreated() {
         new
                 DashboardPage().
@@ -175,7 +174,7 @@ public class CreditPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldDeclineViaCreditWithInvalidCard() {
         new
                 DashboardPage().
@@ -184,7 +183,7 @@ public class CreditPageUiTest {
     }
 
     @Test
-    @Disabled
+//    @Disabled
     void shouldDeclineViaCreditWithInvalidOwner() {
         new
                 DashboardPage().
