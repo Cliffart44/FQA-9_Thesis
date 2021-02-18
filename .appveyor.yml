@@ -25,11 +25,11 @@ install:
   - netstat -na | grep "5432"
   - netstat -na | grep "3306"
   - netstat -na | grep "9999"
-#  - java -jar aqa-shop.jar &                                                        # For PostgreSQL database
-  - java -jar aqa-shop.jar --spring.datasource.url=jdbc:mysql://localhost:3306/app & # For MySQL database
-  - wait-for-it localhost:8080 -t 100
+  - java -jar aqa-shop.jar &                                                          # For PostgreSQL database
+#  - java -jar aqa-shop.jar --spring.datasource.url=jdbc:mysql://localhost:3306/app & # For MySQL database
 
 build_script:
+  - wait-for-it localhost:8080 -t 100
   - netstat -na | grep "8080"
-#  - ./gradlew clean test --stacktrace --info                                         # For PostgreSQL database
-  - ./gradlew clean test --stacktrace --info -Ddb.url=jdbc:mysql://localhost:3306/app # For MySQL database
+  - ./gradlew clean test --stacktrace --info                                           # For PostgreSQL database
+#  - ./gradlew clean test --stacktrace --info -Ddb.url=jdbc:mysql://localhost:3306/app # For MySQL database

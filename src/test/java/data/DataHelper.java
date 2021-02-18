@@ -51,6 +51,6 @@ public class DataHelper {
     }
 
     public static RequiredFields getInvalidOwnerFields() {
-        return new RequiredFields(getCardNumber("APPROVED"), "12", "26", "Ъ", getCvcCvv());
+        return new RequiredFields(getCardNumber("APPROVED"), "12", "26", "ъ", getCvcCvv());
     }
 }

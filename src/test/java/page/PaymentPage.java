@@ -73,6 +73,6 @@ public class PaymentPage {
 
     public void checkDeclinedWithInvalidOwner(DataHelper.RequiredFields fields) {
         purchase(fields);
-        ownerFieldErrorMessage.shouldBe(visible).shouldHave(exactOwnText("Поле обязательно для заполнения"));
+        ownerFieldErrorMessage.shouldBe(visible).shouldHave(exactOwnText("Поддерживается только латиница"));
     }
 }
