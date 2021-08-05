@@ -5,8 +5,8 @@
 ## Процедура запуска автотестов
 
 ### Необходимое окружение
-- [x] [**Docker Desktop 3.1.0 (51484)**](https://www.docker.com/products/docker-desktop)
-- [x] [**AdoptOpenJDK 11.0.10+9**](https://adoptopenjdk.net/index.html)
+- [x] [**Docker Desktop 3.5.2**](https://www.docker.com/products/docker-desktop)
+- [x] [**Eclipse Temurin OpenJDK 11.0.12+7**](https://adoptium.net/index.html)
 
 ### Запуск
 1. Получить код [репозитория](https://github.com/Cliffart44/FQA-9_Thesis.git) удобным способом.
